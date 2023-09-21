@@ -2,6 +2,7 @@ package com.example.kotlinhilt
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -10,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     //Field Injection
     @Inject
-    lateinit var lars : Musician
+    lateinit var lars: Musician
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,4 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         lars.sign()
     }
+}
+
+@AndroidEntryPoint
+class FragmentExample() : Fragment() {
+    @Inject
+    lateinit var kirk: Musician
 }
